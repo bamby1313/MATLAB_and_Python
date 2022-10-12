@@ -33,6 +33,9 @@ p = pyenv
 ```matlab
 py.list({'Name1','Name2','Name3'})
 ```
+
+Python list with values
+
   
 % Run Python statements with  [*pyrun*](https://www.mathworks.com/help/matlab/ref/pyrun.html) function
 ```matlab
@@ -51,12 +54,44 @@ This example shows how to pass data - structures, table, timetable - between MAT
 strMATLAB = "text"
 strPython = py.str(strMATLAB)
 ```
+> strPython =   
+>  Python str with no properties.  
+>  text
 
 
 
-b. MATLAB
+### 3_Call_Python_class
+This example shows how to call and pass classes between MATLAB & Python.
+```python
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+```
+```matlab
+classdef Person
+    properties
+        name
+        age
+    end
+    methods
+        function obj = Person(name, age)
+            %UNTITLED3 Construct an instance of this class
+            %   Detailed explanation goes here
+            obj.name = name;
+            obj.age  = age;
+        end
+    end
+end
+```
+
+### 4_Generate_Python_Library
+This example shows how to generate a Python library from a MATLAB function.  
+Please note that MATLAB Compiler SDK is needed.  
+```matlab
+buildResults = compiler.build.pythonPackage
+```
 
 ## :information_source: Helpful resources
-- [Enterprise Deployment with MATLAB Production Server](https://www.mathworks.com/help/compiler_sdk/mps.html?s_tid=CRUX_lftnav) 
-- [FastAPI](https://fastapi.tiangolo.com/) 
-- [Uvicorn](https://www.uvicorn.org/)
+- [Using MATLAB with python](https://www.mathworks.com/products/matlab/matlab-and-python.html) 
+- [Cheat Sheets MATLAB and Python](https://www.mathworks.com/campaigns/offers/matlab-python-cheat-sheets.html) 
