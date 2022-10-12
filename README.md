@@ -26,25 +26,22 @@ Note that depending on your MATLAB version, [this link](https://www.mathworks.co
 This example shows how to call python code or file through 3 approaches
 ```matlab
 % Firstly, verify Python configuration
-p = pyenv;
+p = pyenv
 ```
   
 % Call python with the *py* prefix
 ```matlab
-% Firstly, verify Python configuration
-p = pyenv;
+py.list({'Name1','Name2','Name3'})
 ```
   
 % Run Python statements with  [*pyrun*](https://www.mathworks.com/help/matlab/ref/pyrun.html) function
 ```matlab
-% Firstly, verify Python configuration
-p = pyenv;
+pyrun("a = b*c", b = 5, c = 10)
 ```
   
 % Run Python file with [pyrunfile](https://www.mathworks.com/help/matlab/ref/pyrunfile.html) function
 ```matlab
-% Firstly, verify Python configuration
-p = pyenv;
+pyrunfile("hello.py")
 ```
 
 
