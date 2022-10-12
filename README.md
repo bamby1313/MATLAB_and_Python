@@ -27,23 +27,14 @@ This example shows how to call python code or file through 3 approaches
 ```matlab
 % Firstly, verify Python configuration
 p = pyenv
-```
-  
+
 % Call python with the *py* prefix
-```matlab
 py.list({'Name1','Name2','Name3'})
-```
-
-Python list with values
-
-  
+ 
 % Run Python statements with  [*pyrun*](https://www.mathworks.com/help/matlab/ref/pyrun.html) function
-```matlab
 pyrun("a = b*c", b = 5, c = 10)
-```
-  
+
 % Run Python file with [pyrunfile](https://www.mathworks.com/help/matlab/ref/pyrunfile.html) function
-```matlab
 pyrunfile("hello.py")
 ```
 
